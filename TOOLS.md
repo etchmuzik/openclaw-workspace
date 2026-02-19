@@ -1,40 +1,31 @@
 # TOOLS.md - Local Notes
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+## Google Sheets (Beyond DXB)
+- **CRM:** `13DhpkQuYFcbjjWysaiM_4RbIlJt1ALKxG6aFwhpNVaE` — Leads, follow-ups, pipeline
+- **Projects:** `14-N2bMF0AxbJozQSPc8FxOqjdFfjhZrAgw2DY9Uu_jI` — All active projects & status
+- **Finance:** `1gvv_FIgVBhnAKOVy9CPdbylH3OnFU8SXm4qS54MhFUM` — Invoices, expenses, payments
+- **Account:** beyondtech.eg@gmail.com
 
-## What Goes Here
+## Google Account
+- **Email:** beyondtech.eg@gmail.com
+- **Services:** gmail, calendar, drive, docs, sheets
 
-Things like:
+## GitHub
+- **Username:** etchmuzik
+- **Auth:** gh CLI (keyring)
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+## Telegram
+- **User ID:** 751331374
 
-## Examples
+## Mac Node
+- **Name:** ETCH's MacBook Pro
+- **Status:** Paired & connected
 
-```markdown
-### Cameras
+## TTS
+- Preferred voice: _(not set yet)_
 
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
+## Cameras
+_(none configured)_
 
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
-
----
-
-Add whatever helps you do your job. This is your cheat sheet.
+## SSH
+_(none configured)_
