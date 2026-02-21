@@ -29,10 +29,12 @@
 - **Status:** Paired & connected
 
 ## TTS
-- Preferred voice: _(not set yet)_
+- Preferred voice: Adam (ElevenLabs)
 
 ## Cameras
 _(none configured)_
 
 ## SSH
-_(none configured)_
+- **Key:** ~/.ssh/id_ed25519
+- **Fingerprint:** SHA256:3zAHyF/GNcVWCKZ52zL3uVGmRpe4woHeX/mdLJz7ZCA
+- **GitHub:** etchmuzik (authenticated)
