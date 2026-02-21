@@ -1,0 +1,25 @@
+# Sensitive files - NEVER commit
+*.key
+*.pem
+*.env
+.env*
+!.env.example
+credentials.json
+auth-profiles.json
+linkedin-credentials.json
+linkedin_cookies.json
+
+# OpenClaw sensitive
+.openclaw/
+*.lock
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
