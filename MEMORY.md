@@ -19,7 +19,22 @@
 - **Backup:** All workspaces on private GitHub repos
 
 ## Preferences
-_(Learning over time)_
+- **Always reply on Telegram** — even when chatting from webchat, send replies to Telegram too
+- **Wake up time:** 10:00 AM
+
+## Business
+- **Company:** Beyond DXB — event production, corporate gifts, bookings
+- **Real name:** Hesham Saied
+- **LinkedIn personal:** urn:li:person:mJSQA6L0VV
+- **LinkedIn company page:** org ID 111020906
+- **Google Sheets:** CRM, Projects, Finance, LinkedIn calendars (see TOOLS.md)
+
+## Key Sheet IDs
+- CRM: 13DhpkQuYFcbjjWysaiM_4RbIlJt1ALKxG6aFwhpNVaE
+- Projects: 14-N2bMF0AxbJozQSPc8FxOqjdFfjhZrAgw2DY9Uu_jI
+- Finance: 1gvv_FIgVBhnAKOVy9CPdbylH3OnFU8SXm4qS54MhFUM
+- LinkedIn Personal Calendar: 1n5s7WoENFu2OzbDkRiECywXY8oJvitGy0qD13KwCl7M
+- LinkedIn Company Calendar: 1UrHapQmJk_54ZdM-oFMD5EX1iOmNmF19AkLgF2UVAw4
 
 ## Lessons Learned
 
