@@ -1,0 +1,184 @@
+{
+  "templates": {
+    "greeting": {
+      "trigger": ["hi", "hello", "hey", "good morning", "good evening", "السلام عليكم", "مرحبا"],
+      "message": "Hey! 👋 Thanks for reaching out to Beyond DXB.\n\nHow can we help you today?\n\n🎪 Event Production\n🎁 Corporate Gifts & Branded Items\n📋 Get a Quote\n\nJust let us know what you're looking for!"
+    },
+    "services": {
+      "trigger": ["what do you do", "services", "what you offer", "tell me about"],
+      "message": "Beyond DXB covers everything events & corporate gifting in the UAE 🇦🇪\n\n🎪 *Event Production*\n• Corporate events, galas & conferences\n• Sound, lighting, LED & staging\n• Full AV production\n\n🎁 *Corporate Gifts & Branded Items*\n• Custom branded merchandise\n• Premium corporate gifts\n• Bulk orders with fast turnaround\n\n📸 *Content & Media*\n• Event photography & videography\n• Live streaming\n\nWant a quote for something specific? Just share the details!"
+    },
+    "quote_request": {
+      "trigger": ["quote", "price", "how much", "cost", "pricing", "rate", "quotation"],
+      "message": "Happy to get you a quote! 📋\n\nJust share these details:\n\n1️⃣ *Type:* Event / Gifts / Both?\n2️⃣ *Date:* When is it?\n3️⃣ *Location:* Where in UAE?\n4️⃣ *Budget range:* (optional but helps)\n5️⃣ *Details:* Guest count, items needed, theme, etc.\n\nWe'll get back to you within a few hours ⚡"
+    },
+    "gifts_catalog": {
+      "trigger": ["catalog", "catalogue", "brochure", "options", "what gifts", "branded items", "merchandise", "merch"],
+      "message": "Here's what we do for corporate gifts & branded items 🎁\n\n✅ T-shirts, polos & caps\n✅ Notebooks, pens & desk items\n✅ Tech gadgets (power banks, USBs, speakers)\n✅ Premium gift boxes & hampers\n✅ Custom packaging & printing\n✅ Trophies & awards\n\n*MOQ:* Usually 50+ pieces\n*Turnaround:* 5-10 working days\n*Branding:* Screen print, embroidery, laser engrave, UV print\n\nShare what you need and we'll send options with pricing!"
+    },
+    "event_inquiry": {
+      "trigger": ["event", "conference", "gala", "corporate event", "production", "stage", "setup"],
+      "message": "We'd love to help with your event! 🎪\n\nTo give you the best proposal, we need:\n\n1️⃣ *Event type:* Conference / Gala / Launch / Activation?\n2️⃣ *Date & time:*\n3️⃣ *Venue:* (or need help finding one?)\n4️⃣ *Expected guests:*\n5️⃣ *What you need:* Sound / Lighting / LED / Stage / Decor / Catering?\n6️⃣ *Budget range:*\n\nWe handle everything from concept to execution 💪"
+    },
+    "availability": {
+      "trigger": ["available", "in stock", "do you have"],
+      "message": "Let me check availability for you! 🔍\n\nCould you share:\n• *Item/product* you're looking for\n• *Quantity* needed\n• *When* you need it by\n\nI'll get back to you ASAP ⚡"
+    },
+    "delivery": {
+      "trigger": ["delivery", "shipping", "when will it arrive", "deliver", "ship"],
+      "message": "Here's how delivery works 🚚\n\n*Dubai/Sharjah:* 1-2 business days\n*Abu Dhabi/Other Emirates:* 2-3 business days\n*International:* 5-10 business days (DHL/Aramex)\n\n📦 Free delivery in Dubai for orders above AED 1,000\n\nWant to track an existing order? Share your order details and I'll check for you!"
+    },
+    "payment": {
+      "trigger": ["payment", "pay", "bank transfer", "invoice", "bank details"],
+      "message": "Here are our payment options 💳\n\n✅ Bank transfer (preferred)\n✅ Credit/debit card\n✅ Cash on delivery (Dubai only)\n\n*Terms:*\n• 50% advance to start production\n• 50% before delivery/event\n• Full payment for orders under AED 5,000\n\nNeed an invoice or bank details? Just let me know!"
+    },
+    "logo_branding": {
+      "trigger": ["logo", "branding", "design", "artwork", "print", "printing"],
+      "message": "For branding & printing, we need 🎨\n\n📁 *Logo file:* AI, EPS, SVG, or high-res PNG (min 300 DPI)\n🎨 *Colors:* Pantone codes if you have them\n📐 *Size & placement:* Where on the item?\n\n*Branding options:*\n• Screen printing (best for bulk)\n• Embroidery (polos, caps)\n• Laser engraving (metal, wood)\n• UV printing (full color on any surface)\n• Heat transfer (complex designs)\n\nNo logo yet? We can design one for you too! 💡"
+    },
+    "sample": {
+      "trigger": ["sample", "mockup", "proof", "test", "preview"],
+      "message": "Absolutely! Here's our sample process 🔬\n\n1️⃣ *Digital mockup:* FREE — we send a visual proof first\n2️⃣ *Physical sample:* AED 50-200 depending on item (refunded on bulk order)\n3️⃣ *Timeline:* Digital mockup in 24hrs, physical sample in 3-5 days\n\nShare what item you want sampled and we'll get the mockup started!"
+    },
+    "minimum_order": {
+      "trigger": ["minimum", "moq", "min order", "minimum order", "small order", "how many"],
+      "message": "Our minimum orders 📊\n\n🎁 *Corporate Gifts:* 50 pieces (most items)\n👕 *Apparel:* 25 pieces per design/color\n📦 *Packaging/Boxes:* 100 pieces\n🏆 *Trophies/Awards:* 10 pieces\n\n💡 *Smaller quantities?* We can work with it for premium items — just ask!\n\nWhat are you looking for? I'll confirm the MOQ for that specific item."
+    },
+    "turnaround": {
+      "trigger": ["how long", "turnaround", "timeline", "when ready", "deadline", "rush", "urgent", "asap"],
+      "message": "Standard turnaround times ⏱️\n\n🎁 *Gifts (standard):* 5-10 working days\n🎁 *Gifts (rush):* 3-5 working days (+20%)\n👕 *Apparel:* 7-14 working days\n🎪 *Event production:* 2-4 weeks planning\n📦 *Custom packaging:* 10-15 working days\n\n⚡ *Need it faster?* We do rush orders — share your deadline and we'll make it work!"
+    },
+    "referral": {
+      "trigger": ["recommend", "referral", "refer"],
+      "message": "We love referrals! 🤝\n\nRefer a client to Beyond DXB and earn:\n\n💰 *5% commission* on their first order\n🎁 *Free gift* from our premium collection\n🔄 *Priority pricing* on your next order\n\nJust have them mention your name when they reach out. Simple as that!"
+    },
+    "location_office": {
+      "trigger": ["location", "office", "address", "where are you", "visit", "showroom"],
+      "message": "📍 We're based in Dubai!\n\n*Beyond DXB*\nJumeirah Village Circle (JVC)\nDubai, UAE 🇦🇪\n\n🕐 *Working hours:* Sun-Thu, 9AM-6PM\n📱 *WhatsApp:* You're already here! 😄\n📧 *Email:* beyondtech.eg@gmail.com\n\nWant to visit? Let us know and we'll arrange a time!"
+    },
+    "bulk_discount": {
+      "trigger": ["discount", "bulk", "wholesale", "large order", "big order"],
+      "message": "We offer tiered pricing for bulk orders 📦\n\n💰 *100-499 pcs:* Standard rate\n💰 *500-999 pcs:* 10% off\n💰 *1,000-4,999 pcs:* 15% off\n💰 *5,000+ pcs:* Custom quote (best rates)\n\n🤝 *Repeat clients:* Additional loyalty discount\n\nShare what you need + quantity and I'll get you the best price!"
+    },
+    "portfolio": {
+      "trigger": ["portfolio", "previous work", "examples", "past events", "photos", "pictures"],
+      "message": "Here's a taste of what we do ✨\n\n🎪 *Events we've produced:*\n• Corporate galas (500+ guests)\n• Product launches & brand activations\n• Conferences & award ceremonies\n• Private parties & VIP events\n\n🎁 *Gifting projects:*\n• Ramadan & National Day corporate hampers\n• Employee welcome kits\n• Conference swag & giveaways\n\nI'll send you some photos and case studies. What type of project are you most interested in?"
+    },
+    "national_day": {
+      "trigger": ["national day", "uae day", "december 2", "spirit of the union"],
+      "message": "🇦🇪 UAE National Day is our specialty!\n\n🎪 *Events*\n• National Day celebrations & galas\n• Staff parties with UAE theming\n• Outdoor festivals & community events\n\n🎁 *National Day Gifts*\n• UAE flag themed merchandise\n• Custom gift boxes with local products\n• Branded pins, scarves & accessories\n\n⚡ Book early — National Day slots fill up fast!\n\nShare your budget and guest count and we'll propose something amazing."
+    },
+    "new_year": {
+      "trigger": ["new year", "nye", "year end", "annual party", "end of year"],
+      "message": "🎆 Year-end & NYE — let's make it memorable!\n\n🎪 *What we offer:*\n• Gala dinners & award ceremonies\n• NYE countdown events\n• Team celebrations & year-end parties\n• Full production: sound, lights, LED, stage\n\n🎁 *Year-End Gifts:*\n• Employee appreciation boxes\n• Client thank-you hampers\n• Custom calendars & planners for 2027\n\nWhat are you planning? Let's discuss!"
+    },
+    "custom_request": {
+      "trigger": ["custom", "bespoke", "special", "unique", "personalize", "personalized"],
+      "message": "Custom & bespoke is what we do best! ✨\n\nTell us your vision:\n\n1️⃣ *What's it for?* (event, gift, activation)\n2️⃣ *Theme or concept?*\n3️⃣ *Budget range?*\n4️⃣ *Timeline?*\n\nWe've done everything from 3D-printed trophies to fully themed immersive experiences. If you can dream it, we can build it 💪"
+    },
+    "collaboration": {
+      "trigger": ["partner", "partnership", "collaborate", "collaboration", "vendor", "supplier"],
+      "message": "Always open to partnerships! 🤝\n\nWe work with:\n• 🏨 Hotels & venues\n• 🎨 Designers & agencies\n• 📸 Photographers & videographers\n• 🍽️ Caterers & F&B\n• 🎪 Other event suppliers\n\nTell us about your company and how you'd like to collaborate. Let's set up a call!"
+    },
+    "followup": {
+      "trigger": [],
+      "message": "Hi! 👋 Just following up on our conversation.\n\nDid you have any questions or want to move forward? Happy to help with anything!\n\nBest,\nHesham | Beyond DXB"
+    },
+    "followup_quote": {
+      "trigger": [],
+      "message": "Hi! 👋 Just checking in on the quote we sent.\n\nWould you like to:\n✅ Proceed with the order\n🔄 Adjust quantities or items\n❓ Ask any questions\n\nHappy to help either way!\n\nBest,\nHesham | Beyond DXB"
+    },
+    "followup_warm": {
+      "trigger": [],
+      "message": "Hey! 👋 Hope you're doing well.\n\nJust wanted to check if you have any upcoming events or gifting needs. We've got some great new products and early-bird rates for Q2.\n\nWould love to catch up whenever you're free!\n\nBest,\nHesham | Beyond DXB 🇦🇪"
+    },
+    "thank_you": {
+      "trigger": ["thanks", "thank you", "shukran", "appreciate"],
+      "message": "You're welcome! 🙏\n\nDon't hesitate to reach out anytime. We're always here to help!\n\nBest,\nHesham | Beyond DXB 🇦🇪"
+    },
+    "thank_you_order": {
+      "trigger": [],
+      "message": "Thank you for your order! 🎉\n\nHere's what happens next:\n\n1️⃣ We'll send a digital mockup for approval\n2️⃣ Production starts after your OK\n3️⃣ Quality check before shipping\n4️⃣ Delivery + photos of final product\n\nYou'll get updates at every step. Questions? Just message us here! 🙏"
+    },
+    "after_hours": {
+      "trigger": [],
+      "message": "Thanks for your message! 🌙\n\nOur team is currently offline but we'll get back to you first thing tomorrow morning (Dubai time).\n\nIn the meantime, feel free to share your requirements and we'll have a response ready for you!\n\nBest,\nBeyond DXB"
+    },
+    "ramadan": {
+      "trigger": ["ramadan", "iftar", "suhoor", "eid"],
+      "message": "Ramadan Kareem! 🌙✨\n\nWe specialize in corporate iftar events & Ramadan gifting:\n\n🎪 *Iftar Events*\n• Full production & setup\n• Themed decor & Arabic styling\n• Sound & lighting\n• Catering coordination\n\n🎁 *Ramadan Gifts*\n• Custom gift boxes & hampers\n• Branded dates & chocolates\n• Premium corporate packages\n\nBooking up fast — share your requirements and we'll get you sorted!"
+    },
+    "warranty": {
+      "trigger": ["warranty", "damaged", "broken", "defect", "quality issue", "complaint", "wrong"],
+      "message": "Sorry to hear that! We take quality seriously 🛡️\n\n*Our guarantee:*\n• Replacement or refund for defective items\n• Free reprint if branding doesn't match approved mockup\n• Issues must be reported within 48hrs of delivery\n\nPlease share:\n📸 Photos of the issue\n📋 Order details\n\nWe'll sort it out ASAP!"
+    },
+    "sound_lighting": {
+      "trigger": ["sound", "speakers", "audio", "PA system", "microphone", "mic"],
+      "message": "🔊 *Sound & Audio Production*\n\nWe cover every setup size:\n\n🎤 *Small (up to 100 pax):*\n• 2x powered speakers + wireless mic\n• Perfect for meetings & intimate events\n\n🔊 *Medium (100-500 pax):*\n• Full PA system + mixing console\n• 4-8 speakers + monitors\n• Wireless mics (handheld + lapel)\n\n🎵 *Large (500+ pax):*\n• Line array system\n• Full FOH + monitor setup\n• Audio engineer on-site\n• DJ equipment available\n\n*All setups include:*\n✅ Delivery & setup\n✅ Sound check\n✅ On-site technician\n✅ Breakdown & collection\n\nShare your venue + guest count and I'll spec the right system!"
+    },
+    "lighting_production": {
+      "trigger": ["lighting", "lights", "spot light", "wash", "LED par", "par can", "moving head"],
+      "message": "💡 *Lighting Production*\n\nWe design lighting that transforms your venue:\n\n✨ *Ambient Lighting*\n• LED par cans (RGBW)\n• Uplighting & wash effects\n• Fairy lights & festoon\n\n🎯 *Stage Lighting*\n• Moving heads (beam + spot + wash)\n• Follow spots\n• Profile & Fresnel fixtures\n\n🌈 *Effects*\n• Gobos (custom logo projection)\n• Haze & fog machines\n• Laser shows\n• Strobe & UV\n\n🎨 *Design Services*\n• Full lighting plot & 3D visualization\n• On-site lighting operator\n• DMX programming\n\nTell us the vibe you want and we'll design it! 🎪"
+    },
+    "led_screens": {
+      "trigger": ["LED screen", "LED wall", "screen", "display", "video wall", "projector", "projection"],
+      "message": "📺 *LED Screens & Video*\n\nCrystal-clear visuals for any event:\n\n*Indoor LED Walls:*\n• P2.6 / P2.9 / P3.9 (high resolution)\n• Any size — modular panels\n• Perfect for conferences, galas, launches\n\n*Outdoor LED Screens:*\n• P4.8 / P5.9 (weather-resistant)\n• High brightness for daylight visibility\n\n*Projection:*\n• 10K-30K lumen projectors\n• Front & rear projection\n• Mapping & immersive projection\n\n*Content:*\n• Custom motion graphics & videos\n• Live camera feed (IMAG)\n• Presentation management\n\nShare your venue size + what you want to display and we'll recommend the best setup!"
+    },
+    "stage_design": {
+      "trigger": ["stage", "staging", "backdrop", "truss", "rigging", "podium"],
+      "message": "🎪 *Stage & Set Design*\n\nFrom simple podiums to full custom builds:\n\n🔨 *Stage Platforms*\n• Modular staging (any size/height)\n• Runway & catwalk stages\n• 360° & thrust stages\n• Hydraulic/revolving (special events)\n\n🎨 *Backdrops & Set Design*\n• Custom printed backdrops\n• 3D built sets & structures\n• Fabric draping & rigging\n• Branded step-and-repeat walls\n\n🏗️ *Structure*\n• Truss systems & rigging\n• Ground support & fly systems\n• Podiums & lecterns\n\n📐 *Design*\n• 3D renders & visualization\n• Technical drawings\n• On-site production manager\n\nShare your event concept and we'll design the stage!"
+    },
+    "av_full_package": {
+      "trigger": ["AV", "audio visual", "full package", "full production", "complete setup", "everything"],
+      "message": "🎪 *Full AV Production Package*\n\nOne team, everything covered:\n\n🔊 *Sound* — PA system, wireless mics, mixing\n💡 *Lighting* — Stage + ambient + effects\n📺 *Video* — LED walls, projection, cameras\n🎪 *Stage* — Custom build, backdrop, set design\n🎬 *Content* — Motion graphics, presentations\n👨‍💻 *Crew* — Technicians, operators, stage manager\n\n*Popular packages:*\n\n📋 *Corporate Conference (100-300 pax)*\nStage + LED wall + PA + lighting + 2 mics\nStarting from AED 15,000\n\n📋 *Gala Dinner (200-500 pax)*\nFull staging + LED + sound + lighting design + effects\nStarting from AED 35,000\n\n📋 *Large Scale (500+ pax)*\nCustom quote based on requirements\n\nShare your brief and we'll build a tailored package! 💪"
+    },
+    "venue_finding": {
+      "trigger": ["venue", "hotel", "ballroom", "hall", "outdoor venue", "find a venue"],
+      "message": "🏨 *Need help finding the perfect venue?*\n\nWe work with 50+ venues across the UAE:\n\n🏨 *Hotels:* 5-star ballrooms & meeting rooms\n🏢 *Conference centers:* DWTC, ADNEC, Expo City\n🌴 *Outdoor:* Beach clubs, rooftops, desert camps\n🏛️ *Unique:* Museums, yachts, warehouses\n\nTell us:\n1️⃣ Guest count\n2️⃣ Event type\n3️⃣ Preferred area\n4️⃣ Budget range\n5️⃣ Date\n\nWe'll shortlist 3-5 options with availability & pricing! 📍"
+    },
+    "live_streaming": {
+      "trigger": ["live stream", "streaming", "hybrid", "virtual", "online", "zoom", "webcast"],
+      "message": "📡 *Live Streaming & Hybrid Events*\n\nReach audiences beyond the room:\n\n🎥 *Multi-camera setup* (2-4 cameras)\n🖥️ *Professional switching & graphics*\n🌐 *Stream to:* YouTube, Zoom, Teams, custom platforms\n💬 *Interactive:* Live Q&A, polls, chat moderation\n📊 *Analytics:* Viewer count, engagement tracking\n\n*Hybrid packages include:*\n• On-site AV production\n• Virtual platform setup\n• Technical director\n• Recording + post-event edit\n\nStarting from AED 8,000\n\nWant to add streaming to your event? Share the details!"
+    },
+    "entertainment": {
+      "trigger": ["entertainment", "DJ", "band", "performer", "singer", "dancer", "talent", "act"],
+      "message": "🎭 *Entertainment & Talent Booking*\n\nWe source the best talent in the UAE:\n\n🎵 *Music*\n• DJs (all genres)\n• Live bands & musicians\n• Singers & vocal performers\n\n🎭 *Performance*\n• Dancers & choreography\n• Acrobats & circus acts\n• Magicians & illusionists\n• LED performers & fire shows\n\n🎤 *Hosting*\n• MCs & presenters (Arabic/English)\n• Comedians\n• Celebrity appearances\n\n🎨 *Interactive*\n• Caricature artists\n• Photo booths (360°, mirror, GIF)\n• VR/AR experiences\n\nWhat vibe are you going for? We'll suggest the perfect acts! 🎪"
+    },
+    "decor_theming": {
+      "trigger": ["decor", "decoration", "theme", "flowers", "floral", "furniture", "centerpiece", "table setup"],
+      "message": "🎨 *Event Decor & Theming*\n\nWe create immersive environments:\n\n💐 *Floral & Organic*\n• Centerpieces & table arrangements\n• Floral walls & arches\n• Hanging installations\n\n🪑 *Furniture & Lounge*\n• VIP lounge setups\n• Premium seating (chiavari, ghost, cross-back)\n• High tables, bars & counters\n\n🎭 *Themed Environments*\n• Arabian nights\n• Winter wonderland\n• Tropical paradise\n• Futuristic & tech\n• Custom themes to your brief\n\n🖼️ *Signage & Branding*\n• Welcome boards & directional signs\n• Branded installations\n• Neon signs & lightboxes\n\nShare your theme or mood board and we'll bring it to life! ✨"
+    },
+    "photography_video": {
+      "trigger": ["photographer", "photography", "videography", "video", "camera", "coverage", "shoot"],
+      "message": "📸 *Event Photography & Videography*\n\n🎥 *Coverage Packages:*\n\n📸 *Photography*\n• 1-2 photographers\n• Same-day edit highlights\n• Full gallery (48-72hrs)\n• Drone aerial shots\n\n🎬 *Videography*\n• 1-3 camera operators\n• Highlight reel (1-3 min)\n• Full event edit\n• Drone footage\n• Same-day recap video\n\n📱 *Social Media*\n• Real-time stories & reels\n• Boomerangs & GIFs\n• Live posting during event\n\n💰 *Starting from:*\n• Photography: AED 3,000\n• Videography: AED 5,000\n• Photo + Video combo: AED 7,000\n\nWhen is your event? Let's lock in the crew! 📅"
+    },
+    "outdoor_event": {
+      "trigger": ["outdoor", "tent", "marquee", "garden", "desert", "beach", "rooftop"],
+      "message": "🌴 *Outdoor Event Production*\n\nWe handle the elements so you don't have to:\n\n⛺ *Structures*\n• Clear span marquees & tents\n• Pagodas & stretch tents\n• Geodesic domes\n• Shade structures & pergolas\n\n❄️ *Climate Control*\n• AC units & cooling systems\n• Misting fans\n• Heaters (winter events)\n\n⚡ *Power*\n• Generators (silent)\n• Full power distribution\n• Backup power\n\n🏗️ *Extras*\n• Portable flooring & carpeting\n• Luxury restroom trailers\n• Fencing & barriers\n• Parking management\n\n*Popular locations:* Desert, beach, rooftop, garden, marina\n\nShare your location and event size — we'll handle the rest! 🏜️"
+    },
+    "exhibition_booth": {
+      "trigger": ["exhibition", "booth", "stand", "expo", "trade show", "GITEX", "DWTC"],
+      "message": "🏗️ *Exhibition Stands & Booths*\n\nStand out at any expo:\n\n📐 *Types:*\n• Shell scheme upgrades\n• Custom-built stands\n• Double-decker booths\n• Portable/reusable modular\n\n🎨 *Includes:*\n• 3D design & rendering\n• Construction & branding\n• Lighting & AV integration\n• Furniture & fixtures\n• Storage & meeting rooms\n\n🔧 *Services:*\n• Project management\n• Setup & dismantling\n• On-site support\n• Graphics & printing\n\n📍 *Experience at:* DWTC, ADNEC, Expo City, Sharjah Expo\n\nShare your booth size + expo name and we'll design something that draws crowds! 🎯"
+    },
+    "team_building": {
+      "trigger": ["team building", "team activity", "corporate activity", "outing", "team outing"],
+      "message": "🤝 *Team Building & Corporate Activities*\n\nEnergize your team:\n\n🏃 *Active*\n• Outdoor adventure challenges\n• Sports tournaments\n• Desert safari experiences\n• Water sports & beach games\n\n🧠 *Creative*\n• Cooking competitions\n• Art & music workshops\n• Escape room challenges\n• Hackathons\n\n🎮 *Entertainment*\n• Game show formats\n• Trivia & quiz nights\n• VR experiences\n• Arcade & gaming zones\n\n🏕️ *Retreats*\n• Full-day corporate retreats\n• Overnight camping experiences\n• Wellness & mindfulness sessions\n\n*From 20 to 2000+ people*\n\nHow many people + what vibe are you going for? 💪"
+    },
+    "launch_activation": {
+      "trigger": ["launch", "product launch", "activation", "brand activation", "opening", "grand opening", "reveal"],
+      "message": "🚀 *Product Launches & Brand Activations*\n\nMake it unforgettable:\n\n🎬 *Launch Events*\n• Reveal moments (LED reveal, curtain drop, fog)\n• Press conferences & media walls\n• VIP & influencer experiences\n• Live demonstrations\n\n🏪 *Activations*\n• Pop-up experiences\n• Interactive brand zones\n• Sampling & demo stations\n• Social media walls & photo ops\n\n📱 *Digital Integration*\n• AR/VR experiences\n• Custom hashtag walls\n• Live social media feeds\n• Influencer coordination\n\n📊 *We handle:*\n• Concept & creative direction\n• Full production & build\n• Staffing & brand ambassadors\n• ROI tracking & reporting\n\nWhat are you launching? Let's create buzz! 🔥"
+    },
+    "site_visit": {
+      "trigger": ["site visit", "site check", "venue visit", "recce", "walkthrough"],
+      "message": "📍 *Site Visit & Technical Recce*\n\nBefore every event, we do:\n\n✅ Venue walkthrough with our production team\n✅ Power & rigging assessment\n✅ Load-in/load-out planning\n✅ Technical requirements check\n✅ Safety & emergency assessment\n\nWant to schedule a site visit? Share:\n\n1️⃣ Venue name & location\n2️⃣ Preferred date/time\n3️⃣ Event date\n4️⃣ Brief overview of what you need\n\nWe'll come prepared with solutions! 🏗️"
+    },
+    "event_day_info": {
+      "trigger": ["event day", "on the day", "setup time", "load in", "schedule", "run sheet", "cue sheet"],
+      "message": "📋 *Event Day — What to Expect*\n\nOur standard event day flow:\n\n🕐 *Load-in:* Team arrives 4-8 hrs before event\n🔨 *Setup:* Stage, AV, lighting, decor installation\n🔍 *Sound check:* 2 hrs before doors\n✅ *Final walk-through:* With you 1 hr before\n🚪 *Doors open:* Showtime!\n📋 *During:* Stage manager + technicians on standby\n🧹 *Strike:* Breakdown after last guest leaves\n\n*Your event team:*\n• Production manager (your point of contact)\n• Audio engineer\n• Lighting operator\n• Stage hands\n• Runner\n\nWe send a detailed run sheet 48hrs before the event. Questions? Fire away! 💪"
+    },
+    "wedding": {
+      "trigger": ["wedding", "engagement", "bridal", "kosha", "زفاف", "عرس"],
+      "message": "💍 *Weddings & Engagements*\n\nYour special day, our expertise:\n\n✨ *Full Wedding Production*\n• Kosha & stage design\n• Lighting & sound\n• LED screens & AV\n• Entrance & aisle design\n• Live entertainment\n\n🎨 *Decor & Styling*\n• Floral arrangements\n• Table settings & centerpieces\n• Custom backdrops\n• Photo corners\n\n📸 *Coverage*\n• Photography & videography\n• Drone shots\n• Same-day highlights\n\n🎵 *Entertainment*\n• DJ / live band\n• Zaffa & traditional acts\n• Special effects (fireworks, confetti, CO2)\n\nShare your vision and date — we'll make it magical! 💕"
+    }
+  }
+}

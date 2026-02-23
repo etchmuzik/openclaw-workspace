@@ -1,0 +1,26 @@
+We used AI to plan an event timeline last month. Here's what happened.
+
+I'll be honest — I was skeptical. I've been doing this for years. Could a machine really understand the flow of a live event?
+
+So we tested it. We fed our AI tool the event brief, guest count, venue specs, and production requirements. It generated a minute-by-minute run sheet.
+
+The result?
+
+It nailed about 70% of it. Transitions, buffer times, setup windows — surprisingly solid.
+
+But that other 30%? That's where the human magic lives.
+
+The AI didn't know that this particular client always runs 15 minutes late. It didn't account for the CEO's preference for a private moment before going on stage. It couldn't feel that the energy in the room needed a musical interlude, not a speaker transition.
+
+Here's my take on AI in event production:
+
+→ USE it for logistics, timelines, vendor coordination, budget tracking
+→ USE it for generating creative concepts and brainstorming
+→ DON'T rely on it for emotional intelligence and real-time adaptation
+→ DON'T let it replace the instinct you've built over years of live events
+
+AI is the best assistant we've ever had. But it's not the director. Not yet.
+
+How are you using AI in your events workflow? Let's compare notes 👇
+
+#AIinEvents #EventTech #EventProduction #ArtificialIntelligence #DubaiEvents #BeyondDXB #FutureOfEvents
