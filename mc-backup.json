@@ -1,0 +1,105 @@
+{
+  "revenue": 0,
+  "priorities": [
+    {
+      "text": "Hit daily revenue target",
+      "done": false
+    },
+    {
+      "text": "Close top 3 opportunities",
+      "done": false
+    },
+    {
+      "text": "New npriority",
+      "done": false
+    }
+  ],
+  "projects": {
+    "backlog": [],
+    "inprogress": [],
+    "done": []
+  },
+  "notes": "",
+  "timeline": [
+    {
+      "title": "Phase 1 — Foundation",
+      "range": "Now → Mar 10",
+      "desc": "Set offers, systems, and channel ops.",
+      "milestones": [
+        {
+          "t": "Finalize offer stack",
+          "done": true
+        },
+        {
+          "t": "Launch mission dashboard",
+          "done": true
+        }
+      ]
+    },
+    {
+      "title": "Phase 2 — Growth",
+      "range": "Mar 11 → Apr 20",
+      "desc": "Scale outreach + content + conversion loops.",
+      "milestones": [
+        {
+          "t": "Daily outreach cadence",
+          "done": false
+        },
+        {
+          "t": "Case study pipeline",
+          "done": false
+        }
+      ]
+    },
+    {
+      "title": "Phase 3 — Scale to $1M",
+      "range": "Apr 21 → May 24",
+      "desc": "Double down on winning channels and deals.",
+      "milestones": [
+        {
+          "t": "Weekly revenue review",
+          "done": false
+        },
+        {
+          "t": "Close strategic deals",
+          "done": false
+        }
+      ]
+    }
+  ],
+  "activity": [
+    {
+      "text": "Merged server backup",
+      "ts": 1771952457858
+    },
+    {
+      "text": "Merged server backup",
+      "ts": 1771952457726
+    },
+    {
+      "text": "Merged server backup",
+      "ts": 1771952151791
+    },
+    {
+      "text": "Merged server backup",
+      "ts": 1771952151555
+    },
+    {
+      "text": "Merged server backup",
+      "ts": 1771952027347
+    },
+    {
+      "text": "Merged server backup",
+      "ts": 1771951795812
+    },
+    {
+      "text": "Added a new priority",
+      "ts": 1771951535453
+    },
+    {
+      "text": "Mission Control initialized",
+      "ts": 1771951521497
+    }
+  ],
+  "lastSaved": 1771952457858
+}

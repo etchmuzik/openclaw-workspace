@@ -21,6 +21,8 @@
 ## Preferences
 - **Always reply on Telegram** — even when chatting from webchat, send replies to Telegram too
 - **Wake up time:** 10:00 AM
+- **Malawany is the main mind** — do not modify Malawany bot/runtime/config unless Etch explicitly requests it
+- **Config lock:** Malawany configs are locked; no config changes without explicit approval from Etch
 
 ## Business
 - **Company:** Beyond DXB — event production, corporate gifts, bookings

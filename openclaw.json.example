@@ -1,0 +1,63 @@
+{
+  "update": {
+    "channel": "stable",
+    "checkOnStart": true
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai-codex/gpt-5.3-codex"
+      },
+      "models": {
+        "openai-codex/gpt-5.3-codex": {}
+      },
+      "compaction": { "mode": "safeguard" }
+    },
+    "list": [
+      { "id": "main", "default": true, "name": "EtchClawDBot", "workspace": "~/.openclaw/workspace", "sandbox": { "mode": "off" } }
+    ]
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "dmPolicy": "allowlist",
+      "allowFrom": ["751331374"],
+      "groupPolicy": "allowlist",
+      "groupAllowFrom": ["751331374"],
+      "groups": {
+        "-1003339410987": {
+          "enabled": true,
+          "requireMention": true,
+          "allowFrom": ["751331374"]
+        }
+      },
+      "streaming": "off"
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "port": 47033,
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    }
+  },
+  "memory": {
+    "backend": "qmd",
+    "qmd": {
+      "includeDefaultMemory": true,
+      "paths": [
+        { "name": "knowledge", "path": "~/.openclaw/workspace/knowledge", "pattern": "**/*.md" },
+        { "name": "memory", "path": "~/.openclaw/workspace/memory", "pattern": "**/*.md" }
+      ]
+    }
+  }
+}

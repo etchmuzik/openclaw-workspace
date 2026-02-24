@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Mission Control — Hesham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050508;--card:rgba(255,255,255,.06);--border:rgba(255,255,255,.08);--text:#e8ecf2;--muted:#9aa3b2;
+      --accent:#00D4AA;--danger:#ff5d6b;--warn:#ffba4a;--ok:#4ade80;
+      --radius:18px;--shadow:0 20px 50px rgba(0,0,0,.45);--hover-shadow:0 28px 60px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(circle at 20% 0%,#0d0f17 0%,var(--bg) 35%);color:var(--text);font-family:Inter,sans-serif}
+    .container{max-width:1600px;margin:0 auto;padding:2.5rem}
+    .glass{background:var(--card);border:1px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    header{position:sticky;top:0;z-index:50;margin:12px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:12px 16px}
+    .logo{font-weight:800;letter-spacing:.4px}.logo span{color:var(--accent)}
+    .tabs{display:flex;gap:8px;justify-content:center}
+    .tab{border:1px solid var(--border);padding:.55rem .9rem;border-radius:999px;cursor:pointer;color:var(--muted);background:transparent;transition:.25s ease}
+    .tab:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.2)}
+    .tab.active{background:rgba(0,212,170,.18);border-color:rgba(0,212,170,.5);color:#fff;box-shadow:0 0 24px rgba(0,212,170,.18)}
+    .header-right{display:flex;justify-content:flex-end;align-items:center;gap:10px}
+    .search{background:#0d1018;border:1px solid var(--border);color:#fff;padding:.55rem .8rem;border-radius:10px;min-width:240px;transition:.25s ease}
+    .search:focus{outline:none;border-color:rgba(0,212,170,.65);box-shadow:0 0 0 3px rgba(0,212,170,.15)}
+    .status{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--muted)}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--danger);box-shadow:0 0 18px var(--danger);animation:pulse 1.8s infinite}
+    @keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:.7}100%{transform:scale(1);opacity:1}}
+
+    .hidden{display:none}
+    .fadeInUp{animation:fade .5s ease both}
+    @keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+    .welcome{padding:1rem 1.2rem;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .metric{padding:1rem;position:relative;transition:.3s ease;transform-style:preserve-3d}
+    .metric:hover{transform:translateY(-4px);box-shadow:var(--hover-shadow);border-color:rgba(0,212,170,.35)}
+    .metric::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--accent)}
+    .metric .label{color:var(--muted);font-size:.9rem}.metric .value{font-size:1.8rem;font-weight:800;margin:.35rem 0}.trend{font-size:.85rem;color:var(--ok)}
+
+    .bot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+    .bot-card{padding:1rem;transition:.25s ease}
+    .bot-card:hover{transform:translateY(-3px);box-shadow:var(--hover-shadow)}
+    .bot-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .bot-name{font-weight:700}
+    .bot-status{font-size:.85rem;color:var(--muted)}
+    .bot-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .dash-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:14px}
+    .feed{max-height:420px;overflow:auto;padding:1rem}
+    .feed-item{padding:.7rem;border-bottom:1px dashed var(--border);transition:.2s ease}
+    .feed-item:hover{background:rgba(255,255,255,.03)}
+    .feed-item small{color:var(--muted)}
+
+    .priorities{padding:1rem}
+    .prio-row{display:flex;align-items:center;gap:10px;margin:.45rem 0}
+    .btn{background:rgba(0,212,170,.18);border:1px solid rgba(0,212,170,.5);color:#dffff8;padding:.5rem .8rem;border-radius:10px;cursor:pointer;transition:.25s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,212,170,.2)}
+    .btn.secondary{background:#111623;border-color:var(--border);color:#d5dbea}
+
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+
+    .kanban{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .col{padding:1rem;transition:.25s ease}
+    .col h3{margin:0 0 10px}
+    .col.drop-target{border-color:rgba(0,212,170,.55);box-shadow:0 0 0 2px rgba(0,212,170,.2), var(--shadow)}
+    .task{padding:.75rem;border:1px solid var(--border);border-radius:12px;background:#0d1118;margin-bottom:8px;cursor:pointer;transition:.25s ease}
+    .task:hover{transform:translateY(-2px);border-color:rgba(0,212,170,.35);box-shadow:0 16px 30px rgba(0,0,0,.35)}
+    .task.dragging{opacity:.45;transform:scale(.98)}
+    .badge{font-size:.72rem;padding:.2rem .5rem;border-radius:999px}
+    .high{background:rgba(255,93,107,.2);color:#ffd8dd}.medium{background:rgba(255,186,74,.2);color:#ffe9c6}.low{background:rgba(74,222,128,.2);color:#d7ffe7}
+
+    .timeline{padding:1rem}
+    .phase{border-left:2px solid var(--border);padding:0 0 14px 18px;position:relative}
+    .phase::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:999px;background:#2b3142}
+    .phase.current::before{background:var(--accent);box-shadow:0 0 18px var(--accent)}
+
+    .notes{padding:1rem}
+    .notes textarea{width:100%;min-height:420px;background:#090d14;border:1px solid var(--border);border-radius:12px;color:#e8ecf2;padding:1rem;resize:vertical}
+
+    .modal-wrap{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(3,5,9,.65);backdrop-filter:blur(6px);z-index:80}
+    .modal-wrap.show{display:flex}
+    .modal{width:min(560px,94vw);padding:1rem}
+    .field{display:grid;gap:6px;margin-bottom:10px}
+    .field input,.field textarea,.field select{background:#0a0f17;color:#fff;border:1px solid var(--border);border-radius:10px;padding:.6rem .7rem}
+    .field textarea{min-height:110px;resize:vertical}
+    .modal-actions{display:flex;justify-content:space-between;gap:8px;margin-top:8px}
+
+    @media(max-width:1100px){.metrics{grid-template-columns:repeat(2,1fr)}.dash-grid,.kanban{grid-template-columns:1fr}header{grid-template-columns:1fr}.tabs{justify-content:flex-start;overflow:auto}}
+  </style>
+</head>
+<body>
+  <header class="glass">
+    <div class="logo">⚡ Mission <span>Control</span></div>
+    <nav class="tabs">
+      <button class="tab active" data-tab="dashboard">📊 Dashboard</button>
+      <button class="tab" data-tab="projects">📋 Projects</button>
+      <button class="tab" data-tab="timeline">📅 Timeline</button>
+      <button class="tab" data-tab="notes">📝 Notes</button>
+    </nav>
+    <div class="header-right">
+      <input id="search" class="search" placeholder="Search… (Ctrl/Cmd+K)" />
+      <div class="status"><span id="dot" class="dot"></span><span id="serverState">Server: Offline</span><span id="weather">Dubai --</span></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="dashboard" class="fadeInUp">
+      <div class="welcome glass"><div id="greet">Good day, Hesham</div><div id="now"></div></div>
+      <div class="metrics">
+        <article class="metric glass"><div class="label">Revenue Progress</div><div class="value" id="revVal">$0 / $1,000,000</div><div class="trend" id="revTrend">0%</div><div class="trend" id="revPace" style="color:var(--muted)">Need $0/day</div></article>
+        <article class="metric glass"><div class="label">Active Projects</div><div class="value" id="activeProjects">0</div><div class="trend">Live</div></article>
+        <article class="metric glass"><div class="label">Tasks Today</div><div class="value" id="tasksToday">0</div><div class="trend">Focus mode</div></article>
+        <article class="metric glass"><div class="label">Days to Goal</div><div class="value" id="daysGoal">0</div><div class="trend">Target: May 24, 2026</div></article>
+      </div>
+
+      <div class="bot-grid" id="botGrid"></div>
+
+      <div class="dash-grid">
+        <div class="feed glass" id="activityFeed"></div>
+        <div class="priorities glass">
+          <h3>Top Priorities</h3>
+          <div id="prioList"></div>
+          <button class="btn" id="addPrio">+ Add Priority</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="hidden fadeInUp">
+      <div class="toolbar">
+        <button class="btn secondary" id="exportBtn">⬇ Export Backup</button>
+        <button class="btn secondary" id="importBtn">⬆ Import Backup</button>
+        <input id="importFile" type="file" accept="application/json" class="hidden" />
+      </div>
+      <div class="kanban" id="kanban"></div>
+    </section>
+
+    <section id="timeline" class="hidden fadeInUp">
+      <div class="timeline glass" id="timelineView"></div>
+    </section>
+
+    <section id="notes" class="hidden fadeInUp">
+      <div class="notes glass">
+        <textarea id="notesArea" placeholder="Write notes in markdown style..."></textarea>
+        <div style="display:flex;justify-content:space-between;color:var(--muted);margin-top:8px"><span id="charCount">0 chars</span><span id="savedAt">Not saved yet</span></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="taskModalWrap" class="modal-wrap">
+    <div class="modal glass">
+      <h3 id="taskModalTitle">Task Editor</h3>
+      <div class="field"><label>Title</label><input id="taskTitle" /></div>
+      <div class="field"><label>Description</label><textarea id="taskDesc"></textarea></div>
+      <div class="field"><label>Priority</label><select id="taskPriority"><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></div>
+      <div class="field"><label>Column</label><select id="taskColumn"><option value="backlog">Backlog</option><option value="inprogress">In Progress</option><option value="done">Done</option></select></div>
+      <div class="modal-actions">
+        <button class="btn secondary" id="deleteTaskBtn">Delete</button>
+        <div style="display:flex;gap:8px"><button class="btn secondary" id="cancelTaskBtn">Cancel</button><button class="btn" id="saveTaskBtn">Save</button></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+const STORAGE_KEY='mc_state_v1';
+const END_DATE = new Date('2026-05-24T23:59:59');
+const SERVER = `${location.protocol}//${location.hostname}:8899`;
+const defaultTimeline=[
+  {title:'Phase 1 — Foundation',range:'Now → Mar 10',desc:'Set offers, systems, and channel ops.',milestones:[{t:'Finalize offer stack',done:true},{t:'Launch mission dashboard',done:true}]},
+  {title:'Phase 2 — Growth',range:'Mar 11 → Apr 20',desc:'Scale outreach + content + conversion loops.',milestones:[{t:'Daily outreach cadence',done:false},{t:'Case study pipeline',done:false}]},
+  {title:'Phase 3 — Scale to $1M',range:'Apr 21 → May 24',desc:'Double down on winning channels and deals.',milestones:[{t:'Weekly revenue review',done:false},{t:'Close strategic deals',done:false}]}
+];
+
+const state=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null')||{
+  revenue:0,
+  priorities:[
+    {text:'MIT-1: Stabilize VPS business bot inbound/outbound reliability',done:false},
+    {text:'MIT-2: Launch Malawany GCC offer system (landing + content + outreach)',done:false},
+    {text:'MIT-3: Complete QMD indexing + nightly knowledge review automation',done:false},
+    {text:'Fix Telegram polling/token conflicts when detected',done:false},
+    {text:'Publish first 3 X posts and start daily reply campaign',done:false}
+  ],
+  projects:{
+    backlog:[
+      {title:'Separate business OpenClaw instance',desc:'Isolate business automations from personal main mind',priority:'high',created:new Date().toLocaleDateString()},
+      {title:'Package playbook as paid digital product',desc:'Finalize chapters + payment flow + delivery',priority:'medium',created:new Date().toLocaleDateString()}
+    ],
+    inprogress:[
+      {title:'Mission Control dashboard build',desc:'UI + localStorage + server backup + weather + activity',priority:'high',created:new Date().toLocaleDateString()},
+      {title:'VPS bot reliability hardening',desc:'Resolve Telegram polling conflicts and tighten policies',priority:'high',created:new Date().toLocaleDateString()},
+      {title:'Malawany GCC launch system',desc:'Offer stack, content engine, outreach engine, KPI loop',priority:'high',created:new Date().toLocaleDateString()}
+    ],
+    done:[
+      {title:'Created launch docs and pricing stack',desc:'Landing copy, playbook outline, pricing, X/outreach pack',priority:'medium',created:new Date().toLocaleDateString()},
+      {title:'Added nightly 2:00 AM knowledge review cron',desc:'PARA+CODE nightly distillation and update loop',priority:'low',created:new Date().toLocaleDateString()}
+    ]
+  },
+  notes:'# Mission Control Notes\n\n## North Star\nReach $1,000,000 revenue by May 24, 2026.\n\n## Current Focus\n- Stabilize bot infrastructure\n- Scale content + outreach system\n- Execute daily with MIT discipline\n\n## Daily Checkpoints\n1. Revenue progress + required daily pace\n2. Outreach sent / replies / calls booked\n3. Critical blockers\n',
+  timeline:defaultTimeline,
+  activity:[
+    {text:'Mission Control initialized',ts:Date.now()-1000*60*60*6},
+    {text:'Built PARA+CODE knowledge system',ts:Date.now()-1000*60*60*5},
+    {text:'Created launch docs, pricing stack, and outreach pack',ts:Date.now()-1000*60*60*4},
+    {text:'Added nightly 2:00 AM knowledge review cron',ts:Date.now()-1000*60*60*3},
+    {text:'Connected and tested VPS channels (Telegram/WhatsApp)',ts:Date.now()-1000*60*60*2},
+    {text:'Mission Control server backup layer enabled (localhost:8899)',ts:Date.now()-1000*60*45}
+  ],
+  bots:{
+    malawany:{name:'@malawany_bot',role:'Main mind (protected)',status:'online',lastCheck:Date.now()-1000*60*5},
+    h1:{name:'@Etch_vps_bot',role:'VPS ops worker',status:'online',lastCheck:Date.now()-1000*60*7},
+    etchclaw:{name:'@etchclawdbot',role:'Business automation bot',status:'warning',lastCheck:Date.now()-1000*60*12}
+  },
+  lastSaved:null
+};
+
+if(!state.bots){
+  state.bots={
+    malawany:{name:'@malawany_bot',role:'Main mind (protected)',status:'unknown',lastCheck:Date.now(),detail:'Awaiting sync'},
+    h1:{name:'@Etch_vps_bot',role:'VPS ops worker',status:'unknown',lastCheck:Date.now(),detail:'Awaiting sync'},
+    etchclaw:{name:'@etchclawdbot',role:'Business automation bot',status:'unknown',lastCheck:Date.now(),detail:'Awaiting sync'}
+  };
+}
+
+let editorCtx={mode:'create',col:'backlog',idx:-1};
+
+function save(desc){
+  state.lastSaved=Date.now();
+  if(desc){
+    state.activity.unshift({text:desc,ts:Date.now()});
+    state.activity=state.activity.slice(0,200);
+    postActivity(desc);
+  }
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+  render();
+}
+function money(v){return '$'+Number(v||0).toLocaleString();}
+function daysToGoal(){return Math.max(0,Math.ceil((END_DATE-Date.now())/86400000));}
+function requiredDailyRevenue(){
+  const remaining = Math.max(0,1000000-Number(state.revenue||0));
+  const days = Math.max(1, daysToGoal());
+  return remaining/days;
+}
+function greeting(){const h=new Date().getHours(); return h<12?'morning':h<18?'afternoon':'evening';}
+
+function render(){
+  document.getElementById('greet').textContent=`Good ${greeting()}, Hesham`;
+  document.getElementById('now').textContent=new Date().toLocaleString();
+  document.getElementById('revVal').textContent=`${money(state.revenue)} / $1,000,000`;
+  document.getElementById('revTrend').textContent=((state.revenue/1000000)*100).toFixed(1)+'%';
+  const pace = requiredDailyRevenue();
+  document.getElementById('revPace').textContent = pace <= 0 ? 'Goal reached 🎉' : `Need ${money(Math.round(pace))}/day`;
+
+  const active=state.projects.backlog.length+state.projects.inprogress.length;
+  document.getElementById('activeProjects').textContent=active;
+  document.getElementById('tasksToday').textContent=state.projects.inprogress.length;
+  document.getElementById('daysGoal').textContent=daysToGoal();
+
+  const botColor = s => s==='online' ? 'var(--ok)' : (s==='warning' ? 'var(--warn)' : (s==='unknown' ? 'var(--muted)' : 'var(--danger)'));
+  document.getElementById('botGrid').innerHTML = Object.entries(state.bots||{}).map(([key,b])=>`<article class='bot-card glass'><div class='bot-top'><div class='bot-name'>${b.name}</div><span class='badge' style='background:${botColor(b.status)}22;color:${botColor(b.status)}'>${b.status}</span></div><div class='bot-status'>${b.role}</div><div class='bot-status'>Last check: ${new Date(b.lastCheck||Date.now()).toLocaleTimeString()}</div><div class='bot-status'>${b.detail||''}</div><div class='bot-actions'><button class='btn secondary' onclick="syncBotHealth()">Refresh Health</button></div></article>`).join('');
+
+  const feed=document.getElementById('activityFeed');
+  feed.innerHTML='<h3>Activity Feed</h3>'+state.activity.slice(0,50).map(i=>`<div class='feed-item'><div>${i.text}</div><small>${new Date(i.ts).toLocaleString()}</small></div>`).join('');
+
+  const prio=document.getElementById('prioList');
+  prio.innerHTML=state.priorities.map((p,i)=>`<label class='prio-row'><input type='checkbox' ${p.done?'checked':''} onchange='togglePrio(${i})'><input value="${p.text.replace(/"/g,'&quot;')}" oninput='editPrio(${i},this.value)' style='flex:1;background:#0b1018;border:1px solid var(--border);color:#fff;border-radius:8px;padding:.4rem .5rem'></label>`).join('');
+
+  const cols=[['backlog','Backlog'],['inprogress','In Progress'],['done','Done']];
+  document.getElementById('kanban').innerHTML=cols.map(([k,label])=>`<div class='col glass' data-col='${k}'><h3>${label}</h3><button class='btn' onclick="openTaskModal('create','${k}')">+ Add task</button><div>${state.projects[k].map((t,i)=>`<div class='task' draggable='true' data-col='${k}' data-idx='${i}' onclick="openTaskModal('edit','${k}',${i})"><div style='display:flex;justify-content:space-between'><strong>${t.title}</strong><span class='badge ${t.priority}'>${t.priority}</span></div><div style='color:var(--muted);font-size:.9rem'>${t.desc||''}</div><small style='color:var(--muted)'>${t.created||''}</small></div>`).join('')}</div></div>`).join('');
+
+  const currentIdx = state.timeline.findIndex(p=>p.milestones.some(m=>!m.done));
+  document.getElementById('timelineView').innerHTML='<h3>Roadmap</h3>'+state.timeline.map((p,i)=>`<div class='phase ${i===currentIdx?'current':''}'><h4>${p.title}</h4><small style='color:var(--muted)'>${p.range}</small><p>${p.desc}</p><ul>${p.milestones.map(m=>`<li>${m.done?'✅':'⬜'} ${m.t}</li>`).join('')}</ul></div>`).join('');
+
+  const notes=document.getElementById('notesArea'); if(document.activeElement!==notes) notes.value=state.notes||'';
+  document.getElementById('charCount').textContent=(state.notes||'').length+' chars';
+  document.getElementById('savedAt').textContent=state.lastSaved?('Last saved: '+new Date(state.lastSaved).toLocaleTimeString()):'Not saved yet';
+  initDragAndDrop();
+}
+
+async function syncBotHealth(){
+  try{
+    const r = await fetch(`${SERVER}/mc/bots`);
+    if(!r.ok) throw new Error('health fetch failed');
+    const data = await r.json();
+    if(data?.bots){
+      Object.entries(data.bots).forEach(([k,v])=>{
+        if(!state.bots[k]) return;
+        state.bots[k].status = v.status || state.bots[k].status;
+        state.bots[k].detail = v.detail || '';
+        state.bots[k].lastCheck = data.checkedAt || Date.now();
+      });
+      localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+      render();
+    }
+  }catch{}
+}
+
+function initDragAndDrop(){
+  let payload=null;
+  document.querySelectorAll('.task').forEach(task=>{
+    task.addEventListener('dragstart',e=>{
+      payload={fromCol:task.dataset.col, fromIdx:Number(task.dataset.idx)};
+      task.classList.add('dragging');
+      e.dataTransfer.effectAllowed='move';
+    });
+    task.addEventListener('dragend',()=>task.classList.remove('dragging'));
+  });
+
+  document.querySelectorAll('.col').forEach(col=>{
+    col.addEventListener('dragover',e=>{e.preventDefault(); col.classList.add('drop-target');});
+    col.addEventListener('dragleave',()=>col.classList.remove('drop-target'));
+    col.addEventListener('drop',e=>{
+      e.preventDefault();
+      col.classList.remove('drop-target');
+      if(!payload) return;
+      const toCol=col.dataset.col;
+      if(!toCol) return;
+      const task = state.projects[payload.fromCol][payload.fromIdx];
+      if(!task) return;
+      state.projects[payload.fromCol].splice(payload.fromIdx,1);
+      state.projects[toCol].push(task);
+      payload=null;
+      save(`Moved task: ${task.title} → ${toCol}`);
+    });
+  });
+}
+
+function togglePrio(i){state.priorities[i].done=!state.priorities[i].done;save('Updated a priority');}
+function editPrio(i,v){state.priorities[i].text=v;save();}
+document.getElementById('addPrio').onclick=()=>{state.priorities.push({text:'New priority',done:false});save('Added a new priority');};
+
+function openTaskModal(mode,col,idx=-1){
+  editorCtx={mode,col,idx};
+  const wrap=document.getElementById('taskModalWrap');
+  const delBtn=document.getElementById('deleteTaskBtn');
+  if(mode==='edit'){
+    const t=state.projects[col][idx];
+    document.getElementById('taskModalTitle').textContent='Edit Task';
+    document.getElementById('taskTitle').value=t.title||'';
+    document.getElementById('taskDesc').value=t.desc||'';
+    document.getElementById('taskPriority').value=t.priority||'medium';
+    document.getElementById('taskColumn').value=col;
+    delBtn.style.visibility='visible';
+  }else{
+    document.getElementById('taskModalTitle').textContent='Add Task';
+    document.getElementById('taskTitle').value='';
+    document.getElementById('taskDesc').value='';
+    document.getElementById('taskPriority').value='medium';
+    document.getElementById('taskColumn').value=col;
+    delBtn.style.visibility='hidden';
+  }
+  wrap.classList.add('show');
+  document.getElementById('taskTitle').focus();
+}
+function closeTaskModal(){document.getElementById('taskModalWrap').classList.remove('show');}
+
+function saveTaskFromModal(){
+  const title=document.getElementById('taskTitle').value.trim();
+  if(!title) return;
+  const desc=document.getElementById('taskDesc').value.trim();
+  const priority=document.getElementById('taskPriority').value;
+  const targetCol=document.getElementById('taskColumn').value;
+  if(editorCtx.mode==='create'){
+    state.projects[targetCol].push({title,desc,priority,created:new Date().toLocaleDateString()});
+    save(`Added task: ${title}`);
+  }else{
+    const task=state.projects[editorCtx.col][editorCtx.idx];
+    const moved = editorCtx.col!==targetCol;
+    const updated={...task,title,desc,priority};
+    if(moved){
+      state.projects[editorCtx.col].splice(editorCtx.idx,1);
+      state.projects[targetCol].push(updated);
+    }else state.projects[editorCtx.col][editorCtx.idx]=updated;
+    save(`Updated task: ${title}`);
+  }
+  closeTaskModal();
+}
+function deleteTaskFromModal(){
+  if(editorCtx.mode!=='edit') return;
+  const t=state.projects[editorCtx.col][editorCtx.idx];
+  state.projects[editorCtx.col].splice(editorCtx.idx,1);
+  save(`Deleted task: ${t?.title||'Untitled'}`);
+  closeTaskModal();
+}
+
+document.getElementById('saveTaskBtn').onclick=saveTaskFromModal;
+document.getElementById('cancelTaskBtn').onclick=closeTaskModal;
+document.getElementById('deleteTaskBtn').onclick=deleteTaskFromModal;
+document.getElementById('taskModalWrap').addEventListener('click',e=>{if(e.target.id==='taskModalWrap') closeTaskModal();});
+
+// Tabs
+Array.from(document.querySelectorAll('.tab')).forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  ['dashboard','projects','timeline','notes'].forEach(id=>document.getElementById(id).classList.add('hidden'));
+  document.getElementById(btn.dataset.tab).classList.remove('hidden');
+});
+
+// Search + shortcut
+const search=document.getElementById('search');
+document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();search.focus();}});
+search.addEventListener('input',()=>{const q=search.value.toLowerCase();document.querySelectorAll('.task,.feed-item,.phase').forEach(el=>el.style.display=el.textContent.toLowerCase().includes(q)?'':'none');});
+
+// Notes autosave
+const notes=document.getElementById('notesArea');
+notes.addEventListener('input',()=>{state.notes=notes.value; save('Updated notes');});
+
+// Export / Import backup
+function exportBackup(){
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`mission-control-backup-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+  save('Exported backup');
+}
+function importBackup(file){
+  const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const imported=JSON.parse(reader.result);
+      if(!imported || typeof imported!=='object') throw new Error();
+      Object.assign(state,imported);
+      save('Imported backup');
+    }catch{alert('Invalid backup file');}
+  };
+  reader.readAsText(file);
+}
+document.getElementById('exportBtn').onclick=exportBackup;
+document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();
+document.getElementById('importFile').addEventListener('change',e=>{if(e.target.files[0]) importBackup(e.target.files[0]); e.target.value='';});
+
+// Server backup/enrichment
+async function pingServer(){
+  try{
+    await fetch(`${SERVER}/mc/data`,{method:'GET'});
+    document.getElementById('dot').style.background='var(--ok)';
+    document.getElementById('dot').style.boxShadow='0 0 16px var(--ok)';
+    document.getElementById('serverState').textContent='Server: Online';
+    return true;
+  } catch {
+    document.getElementById('dot').style.background='var(--danger)';
+    document.getElementById('dot').style.boxShadow='0 0 16px var(--danger)';
+    document.getElementById('serverState').textContent='Server: Offline';
+    return false;
+  }
+}
+async function mergeServerData(){
+  try{const r=await fetch(`${SERVER}/mc/data`); if(!r.ok) throw 0; const s=await r.json(); if(s&&typeof s==='object'){ Object.assign(state,{...s,...state}); save('Merged server backup'); }}catch{}
+}
+async function backupServer(){ try{ await fetch(`${SERVER}/mc/data`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(state)});}catch{} }
+async function postActivity(desc){ try{ await fetch(`${SERVER}/mc/activity`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({description:desc,ts:Date.now()})}); }catch{} }
+async function weather(){ try{ const r=await fetch(`${SERVER}/mc/weather?city=Dubai`); const w=await r.json(); document.getElementById('weather').textContent=`Dubai ${w.temp??'--'}° ${w.condition??''}`.trim(); }catch{ document.getElementById('weather').textContent='Dubai --'; }}
+
+(async function init(){
+  await mergeServerData();
+  await pingServer();
+  await weather();
+  await syncBotHealth();
+  setInterval(pingServer,30000);
+  setInterval(backupServer,300000);
+  setInterval(weather,300000);
+  setInterval(syncBotHealth,45000);
+  setInterval(()=>{document.getElementById('now').textContent=new Date().toLocaleString();},1000);
+  render();
+})();
+</script>
+</body>
+</html>
